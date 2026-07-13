@@ -1,5 +1,7 @@
 # coding: utf-8
 
+Faker::Config.locale = "ja"
+
 User.create!(name: "Sample User",
              email: "sample@email.com",
              password: "password",

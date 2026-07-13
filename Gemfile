@@ -17,6 +17,7 @@ gem "jbuilder"
 gem "bootsnap", require: false
 gem 'will_paginate', '~> 3.3' 
 gem 'bootstrap-will_paginate', '1.0.0' 
+gem 'rails-i18n'
 
 
 group :development, :test do
