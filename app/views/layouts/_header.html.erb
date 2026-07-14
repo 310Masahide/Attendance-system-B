@@ -15,7 +15,9 @@
               <li><%= link_to "設定", edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to "ログアウト", logout_path, method: :delete %>
+                <%= button_to logout_path, method: :delete do %>
+                  ログアウト
+                <% end %>
               </li>
             </ul>
           </li>
