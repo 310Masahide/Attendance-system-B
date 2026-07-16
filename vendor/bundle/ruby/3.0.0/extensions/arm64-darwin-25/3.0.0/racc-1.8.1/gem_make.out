@@ -1,0 +1,28 @@
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/satoneaoi/.rbenv/versions/3.0.6/bin/ruby -I /Users/satoneaoi/.rbenv/versions/3.0.6/lib/ruby/3.0.0 -r ./siteconf20260716-17560-ze0xa7.rb extconf.rb
+creating Makefile
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= clean
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\=
+compiling cparse.c
+In file included from cparse.c:12:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+linking shared-object racc/cparse.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.0'
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20260716-17560-zxe6vv/racc

@@ -1,0 +1,98 @@
+find_header: checking for prism.h in /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/include... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"clang -E -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'prism.h' file not found
+    3 | #include <prism.h>
+      |          ^~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <prism.h>
+/* end */
+
+"clang -E -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe "-I/Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/include" conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <prism.h>
+/* end */
+
+--------------------
+
+find_header: checking for prism/extension.h in /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext... -------------------- yes
+
+"clang -E -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. "-I/Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/include" -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'prism/extension.h' file not found
+    3 | #include <prism/extension.h>
+      |          ^~~~~~~~~~~~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <prism/extension.h>
+/* end */
+
+"clang -E -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. "-I/Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/include" -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe "-I/Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext" conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <prism/extension.h>
+/* end */
+
+--------------------
+
+block in append_cflags: checking for whether -fvisibility=hidden is accepted as CFLAGS... -------------------- no
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. "-I/Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/include" "-I/Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext" -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -m64 -fvisibility=hidden -Werror -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+--------------------
+

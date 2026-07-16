@@ -1,0 +1,207 @@
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/msgpack-1.8.3/ext/msgpack
+/Users/satoneaoi/.rbenv/versions/3.0.6/bin/ruby -I /Users/satoneaoi/.rbenv/versions/3.0.6/lib/ruby/3.0.0 -r ./siteconf20260716-17560-x4lm9z.rb extconf.rb
+checking for rb_enc_interned_str() in ruby.h... yes
+checking for rb_hash_new_capa() in ruby.h... no
+checking for rb_proc_call_with_block() in ruby.h... yes
+checking for rb_gc_mark_locations() in ruby.h... yes
+checking for whether -fvisibility=hidden is accepted as CFLAGS... no
+checking for whether -I.. is accepted as CFLAGS... no
+checking for whether -Wall is accepted as CFLAGS... no
+checking for whether -std=gnu99 is accepted as CFLAGS... no
+checking for whether -DHASH_ASET_DEDUPE=1 is accepted as CFLAGS... no
+checking for whether -DSTR_UMINUS_DEDUPE_FROZEN=1 is accepted as CFLAGS... no
+creating Makefile
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/msgpack-1.8.3/ext/msgpack
+make DESTDIR\= clean
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/msgpack-1.8.3/ext/msgpack
+make DESTDIR\=
+compiling buffer.c
+In file included from buffer.c:19:
+In file included from ./buffer.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling buffer_class.c
+In file included from buffer_class.c:19:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling extension_value_class.c
+In file included from extension_value_class.c:19:
+In file included from ./factory_class.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling factory_class.c
+In file included from factory_class.c:19:
+In file included from ./factory_class.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling packer.c
+In file included from packer.c:19:
+In file included from ./packer.h:21:
+In file included from ./buffer.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling packer_class.c
+In file included from packer_class.c:19:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling packer_ext_registry.c
+In file included from packer_ext_registry.c:19:
+In file included from ./packer_ext_registry.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling rbinit.c
+In file included from rbinit.c:19:
+In file included from ./buffer_class.h:21:
+In file included from ./buffer.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling rmem.c
+In file included from rmem.c:19:
+In file included from ./rmem.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling unpacker.c
+In file included from unpacker.c:19:
+In file included from ./unpacker.h:21:
+In file included from ./buffer.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling unpacker_class.c
+In file included from unpacker_class.c:19:
+In file included from ./unpacker.h:21:
+In file included from ./buffer.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling unpacker_ext_registry.c
+In file included from unpacker_ext_registry.c:19:
+In file included from ./unpacker_ext_registry.h:21:
+In file included from ./compat.h:22:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+linking shared-object msgpack/msgpack.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.0'
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/msgpack-1.8.3/ext/msgpack
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20260716-17560-2xe5cj/msgpack

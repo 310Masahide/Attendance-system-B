@@ -1,0 +1,81 @@
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext/prism
+/Users/satoneaoi/.rbenv/versions/3.0.6/bin/ruby -I /Users/satoneaoi/.rbenv/versions/3.0.6/lib/ruby/3.0.0 -r ./siteconf20260716-17560-aagzyz.rb extconf.rb
+checking for prism.h in /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/include... yes
+checking for prism/extension.h in /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext... yes
+checking for whether -fvisibility=hidden is accepted as CFLAGS... no
+creating Makefile
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext/prism
+make DESTDIR\= clean
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext/prism
+make DESTDIR\=
+compiling api_node.c
+In file included from prism/templates/ext/prism/api_node.c.erb:2:
+In file included from /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext/prism/extension.h:6:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling api_pack.c
+In file included from api_pack.c:1:
+In file included from /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext/prism/extension.h:6:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling extension.c
+In file included from extension.c:1:
+In file included from /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext/prism/extension.h:6:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling ./../../src/diagnostic.c
+compiling ./../../src/encoding.c
+compiling ./../../src/node.c
+compiling ./../../src/options.c
+compiling ./../../src/pack.c
+compiling ./../../src/prettyprint.c
+compiling ./../../src/prism.c
+compiling ./../../src/regexp.c
+compiling ./../../src/serialize.c
+compiling ./../../src/static_literals.c
+compiling ./../../src/token_type.c
+compiling ./../../src/util/pm_buffer.c
+compiling ./../../src/util/pm_char.c
+compiling ./../../src/util/pm_constant_pool.c
+compiling ./../../src/util/pm_integer.c
+compiling ./../../src/util/pm_list.c
+compiling ./../../src/util/pm_memchr.c
+compiling ./../../src/util/pm_newline_list.c
+compiling ./../../src/util/pm_string.c
+compiling ./../../src/util/pm_strncasecmp.c
+compiling ./../../src/util/pm_strpbrk.c
+linking shared-object prism/prism.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.0'
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/prism-1.9.0/ext/prism
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 prism.bundle ./.gem.20260716-17560-f8lg3c/prism

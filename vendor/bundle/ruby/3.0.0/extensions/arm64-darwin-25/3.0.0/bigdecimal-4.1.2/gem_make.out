@@ -1,0 +1,58 @@
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/bigdecimal-4.1.2/ext/bigdecimal
+/Users/satoneaoi/.rbenv/versions/3.0.6/bin/ruby -I /Users/satoneaoi/.rbenv/versions/3.0.6/lib/ruby/3.0.0 -r ./siteconf20260716-17560-ei866z.rb extconf.rb
+checking for __builtin_clz()... yes
+checking for __builtin_clzl()... yes
+checking for __builtin_clzll()... yes
+checking for float.h... yes
+checking for math.h... yes
+checking for stdbool.h... yes
+checking for stdlib.h... yes
+checking for x86intrin.h... no
+checking for intrin.h... no
+checking for ruby/atomic.h... yes
+checking for ruby/internal/has/builtin.h... yes
+checking for ruby/internal/static_assert.h... yes
+checking for rb_complex_real() in ruby.h... yes
+checking for rb_complex_imag() in ruby.h... yes
+checking for rb_opts_exception_p() in ruby.h... yes
+checking for rb_category_warn() in ruby.h... yes
+checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
+checking for RUBY_TYPED_EMBEDDABLE in ruby.h... no
+creating Makefile
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/bigdecimal-4.1.2/ext/bigdecimal
+make DESTDIR\= clean
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/bigdecimal-4.1.2/ext/bigdecimal
+make DESTDIR\=
+compiling bigdecimal.c
+In file included from bigdecimal.c:11:
+In file included from ./bigdecimal.h:13:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+compiling missing.c
+In file included from missing.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+linking shared-object bigdecimal.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.0'
+
+current directory: /Users/satoneaoi/プロアカフォルダ/Attendance System　B/attndance_app/vendor/bundle/ruby/3.0.0/gems/bigdecimal-4.1.2/ext/bigdecimal
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bigdecimal.bundle ./.gem.20260716-17560-1w074j

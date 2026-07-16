@@ -1,0 +1,1295 @@
+have_func: checking for rb_absint_size()... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_absint_size; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_absint_singlebit_p()... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_absint_singlebit_p; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_mark_movable()... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_mark_movable; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_wait_for_single_fd()... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+conftest.c:14:57: error: use of undeclared identifier 'rb_wait_for_single_fd'
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return !p; }
+      |                                                         ^~~~~~~~~~~~~~~~~~~~~
+1 warning and 1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return !p; }
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void rb_wait_for_single_fd();
+15: int t(void) { rb_wait_for_single_fd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_enc_interned_str() in ruby.h... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+conftest.c:16:57: error: use of undeclared identifier 'rb_enc_interned_str'
+   16 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_interned_str; return !p; }
+      |                                                         ^~~~~~~~~~~~~~~~~~~
+1 warning and 1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_interned_str; return !p; }
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L. -fstack-protector-strong -L/usr/local/lib  -m64   -lruby.3.0   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_enc_interned_str();
+17: int t(void) { rb_enc_interned_str(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for -lmysqlclient... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64   -lruby.3.0 -lmysqlclient   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: 
+15: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for mysql.h... -------------------- no
+
+"clang -E -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'mysql.h' file not found
+    3 | #include <mysql.h>
+      |          ^~~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+/* end */
+
+--------------------
+
+have_header: checking for mysql/mysql.h... -------------------- yes
+
+"clang -E -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+/* end */
+
+--------------------
+
+have_header: checking for mysql/errmsg.h... -------------------- yes
+
+"clang -E -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/errmsg.h>
+/* end */
+
+--------------------
+
+have_const: checking for SSL_MODE_DISABLED in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SSL_MODE_DISABLED;
+/* end */
+
+--------------------
+
+have_const: checking for SSL_MODE_PREFERRED in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SSL_MODE_PREFERRED;
+/* end */
+
+--------------------
+
+have_const: checking for SSL_MODE_REQUIRED in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SSL_MODE_REQUIRED;
+/* end */
+
+--------------------
+
+have_const: checking for SSL_MODE_VERIFY_CA in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SSL_MODE_VERIFY_CA;
+/* end */
+
+--------------------
+
+have_const: checking for SSL_MODE_VERIFY_IDENTITY in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SSL_MODE_VERIFY_IDENTITY;
+/* end */
+
+--------------------
+
+have_struct_member: checking for MYSQL.net.vio in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+conftest.c:6:39: warning: performing pointer subtraction with a null pointer has undefined behavior [-Wnull-pointer-subtraction]
+    6 | int s = (char *)&((MYSQL*)0)->net.vio - (char *)0;
+      |                                       ^ ~~~~~~~~~
+2 warnings generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <mysql/mysql.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((MYSQL*)0)->net.vio - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return !!argv[argc];
+10: }
+/* end */
+
+--------------------
+
+have_struct_member: checking for MYSQL.net.pvio in mysql/mysql.h... -------------------- no
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+conftest.c:6:35: error: no member named 'pvio' in 'struct NET'
+    6 | int s = (char *)&((MYSQL*)0)->net.pvio - (char *)0;
+      |                  ~~~~~~~~~~~~~~~~ ^
+conftest.c:6:40: warning: performing pointer subtraction with a null pointer has undefined behavior [-Wnull-pointer-subtraction]
+    6 | int s = (char *)&((MYSQL*)0)->net.pvio - (char *)0;
+      |                                        ^ ~~~~~~~~~
+2 warnings and 1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <mysql/mysql.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((MYSQL*)0)->net.pvio - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return !!argv[argc];
+10: }
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_DEFAULT_AUTH in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_DEFAULT_AUTH;
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_ENABLE_CLEARTEXT_PLUGIN in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_ENABLE_CLEARTEXT_PLUGIN;
+/* end */
+
+--------------------
+
+have_const: checking for SERVER_QUERY_NO_GOOD_INDEX_USED in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SERVER_QUERY_NO_GOOD_INDEX_USED;
+/* end */
+
+--------------------
+
+have_const: checking for SERVER_QUERY_NO_INDEX_USED in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SERVER_QUERY_NO_INDEX_USED;
+/* end */
+
+--------------------
+
+have_const: checking for SERVER_QUERY_WAS_SLOW in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)SERVER_QUERY_WAS_SLOW;
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_OPTION_MULTI_STATEMENTS_ON in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_OPTION_MULTI_STATEMENTS_ON;
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_OPTION_MULTI_STATEMENTS_OFF in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_OPTION_MULTI_STATEMENTS_OFF;
+/* end */
+
+--------------------
+
+have_const: checking for MYSQL_OPT_GET_SERVER_PUBLIC_KEY in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)MYSQL_OPT_GET_SERVER_PUBLIC_KEY;
+/* end */
+
+--------------------
+
+have_type: checking for my_bool in mysql/mysql.h... -------------------- no
+
+"clang -fdeclspec -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT -m64  -c conftest.c"
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+conftest.c:6:9: error: unknown type name 'my_bool'
+    6 | typedef my_bool conftest_type;
+      |         ^
+1 warning and 1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql/mysql.h>
+4: 
+5: /*top*/
+6: typedef my_bool conftest_type;
+7: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_func: checking for mysql_ssl_set() in mysql/mysql.h... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -lmysqlclient   "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+ld: warning: ignoring duplicate libraries: '-lmysqlclient'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <mysql/mysql.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_ssl_set; return !p; }
+/* end */
+
+--------------------
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Weverything  "
+error: include location '/usr/local/include' is unsafe for cross-compilation [-Werror,-Wpoison-system-directories]
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:15:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/config.h:23:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:15:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   15 | #define _ALL_SOURCE 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:16:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   16 | #define _DARWIN_C_SOURCE 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:18:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   18 | #define _HPUX_ALT_XOPEN_SOCKET_API 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:19:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   19 | #define _NETBSD_SOURCE 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:20:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   20 | #define _OPENBSD_SOURCE 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:21:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   21 | #define _POSIX_PTHREAD_SEMANTICS 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:22:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   22 | #define __STDC_WANT_IEC_60559_ATTRIBS_EXT__ 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:23:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   23 | #define __STDC_WANT_IEC_60559_BFP_EXT__ 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:24:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   24 | #define __STDC_WANT_IEC_60559_DFP_EXT__ 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:25:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   25 | #define __STDC_WANT_IEC_60559_FUNCS_EXT__ 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:26:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   26 | #define __STDC_WANT_IEC_60559_TYPES_EXT__ 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:27:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   27 | #define __STDC_WANT_LIB_EXT2__ 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:28:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   28 | #define __STDC_WANT_MATH_SPEC_FUNCS__ 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:29:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   29 | #define _TANDEM_SOURCE 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:30:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+   30 | #define __EXTENSIONS__ 1
+      |         ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25/ruby/config.h:353:9: error: macro name is a reserved identifier [-Werror,-Wreserved-macro-identifier]
+  353 | #define __STDC_WANT_LIB_EXT1__ 1
+      |         ^
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/defines.h:71:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/xmalloc.h:53:1: error: [[]] attributes are a C23 extension [-Werror,-Wc23-extensions]
+   53 | RBIMPL_ATTR_NODISCARD()
+      | ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/attr/nodiscard.h:35:34: note: expanded from macro 'RBIMPL_ATTR_NODISCARD'
+   35 | # define RBIMPL_ATTR_NODISCARD() [[nodiscard]]
+      |                                  ^
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/defines.h:71:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/xmalloc.h:81:1: error: [[]] attributes are a C23 extension [-Werror,-Wc23-extensions]
+   81 | RBIMPL_ATTR_NODISCARD()
+      | ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/attr/nodiscard.h:35:34: note: expanded from macro 'RBIMPL_ATTR_NODISCARD'
+   35 | # define RBIMPL_ATTR_NODISCARD() [[nodiscard]]
+      |                                  ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-compound-token-split-by-macro  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-bad-function-cast  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-conditional-uninitialized  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-covered-switch-default  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-declaration-after-statement  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-disabled-macro-expansion  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-documentation-unknown-command  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-missing-field-initializers  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-missing-variable-declarations  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-padded  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-reserved-id-macro  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-sign-conversion  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-static-in-inline  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-switch-enum  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-undef  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-unreachable-code  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0 -Werror -Wno-used-but-marked-unused  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: error: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Werror,-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -fdeclspec -o conftest -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/arm64-darwin25 -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/backward -I/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0 -I. -I/opt/homebrew/opt/mysql-client@8.0/include -I/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -DFULL_SSL_MODE_SUPPORT  conftest.c  -L. -L/Users/satoneaoi/.rbenv/versions/3.0.6/lib -L/opt/homebrew/opt/mysql-client@8.0/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib -L/opt/homebrew/opt/zstd/lib -L. -fstack-protector-strong -L/usr/local/lib -L/Users/satoneaoi/.rbenv/versions/3.0.6/openssl/lib  -m64  -lmysqlclient  -lruby.3.0  -Wl,-rpath,/opt/homebrew/opt/mysql-client@8.0/lib  "
+In file included from conftest.c:1:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby.h:38:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/ruby.h:25:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic.h:23:
+In file included from /Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:29:
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rstring.h:132:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  132 |         struct RString retval;
+      |                        ^
+/Users/satoneaoi/.rbenv/versions/3.0.6/include/ruby-3.0.0/ruby/internal/core/rbasic.h:49:17: note: member 'klass' declared 'const' here
+   49 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
