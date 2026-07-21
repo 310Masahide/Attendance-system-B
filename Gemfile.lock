@@ -82,6 +82,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
+    autoprefixer-rails (10.4.21.0)
+      execjs (~> 2)
     base64 (0.3.0)
     bcrypt (3.1.22)
     benchmark (0.5.0)
@@ -89,6 +91,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.24.6)
       msgpack (~> 1.2)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -111,6 +116,7 @@ GEM
     erb (4.0.4.1)
       cgi (>= 0.3.3)
     erubi (1.13.1)
+    execjs (2.10.1)
     ffi (1.17.4-arm64-darwin)
     globalid (1.4.0)
       activesupport (>= 6.1)
@@ -227,6 +233,14 @@ GEM
       io-console (~> 0.5)
     rexml (3.4.4)
     rubyzip (2.4.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     securerandom (0.3.2)
     selenium-webdriver (4.26.0)
       base64 (~> 0.2)
@@ -246,6 +260,7 @@ GEM
       railties (>= 6.0.0)
     stringio (3.2.0)
     thor (1.5.0)
+    tilt (2.8.0)
     timeout (0.6.1)
     tsort (0.2.0)
     tzinfo (2.0.6)
@@ -271,6 +286,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
+  bootstrap-sass
   capybara
   debug
   importmap-rails
@@ -280,6 +296,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.0)
+  sassc-rails
   selenium-webdriver
   sprockets-rails
   stimulus-rails

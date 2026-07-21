@@ -7,6 +7,8 @@ ruby "3.0.6"
 # Core Rails
 gem "rails", "~> 7.1.0"
 gem "sprockets-rails"
+gem "sassc-rails"
+gem "bootstrap-sass"
 gem "puma", ">= 5.0"
 gem "importmap-rails"
 gem "stimulus-rails"
