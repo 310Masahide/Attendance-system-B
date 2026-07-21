@@ -2,18 +2,18 @@
 
 Faker::Config.locale = "ja"
 
-User.create!(name: "Sample User",
-             email: "sample@email.com",
-             password: "password",
-             password_confirmation: "password",
-             admin: true)
+admin = User.find_or_initialize_by(email: "sample@email.com")
+admin.assign_attributes(name: "Sample User",
+                         password: "password",
+                         password_confirmation: "password",
+                         admin: true)
+admin.save!
 
 60.times do |n|
-  name  = Faker::Name.name
   email = "sample-#{n+1}@email.com"
-  password = "password"
-  User.create!(name: name,
+  next if User.exists?(email: email)
+  User.create!(name: Faker::Name.name,
                email: email,
-               password: password,
-               password_confirmation: password)
+               password: "password",
+               password_confirmation: "password")
 end
