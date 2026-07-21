@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  # 時間（小数の時間数）を「時.分」の10進表記で返します（例: 8.5, 19.25, 7.33）
+  def format_decimal_time(hours)
+    hours.round(2).to_s
+  end
+
   # ページごとにタイトルを返す
   def full_title(page_name = "") # メソッドと引数の定義
     base_title = "AttendanceApp" # 基本となるアプリケーション名を変数に代入

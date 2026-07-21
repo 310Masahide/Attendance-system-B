@@ -1,0 +1,18 @@
+<% provide(:title, "#{@user.name}の基本情報の更新") %>
+<h1><%= @user.name %>の基本情報の更新</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(url: update_user_basic_info_user_path(@user), local: true, method: :patch, data: { turbo: false }) do |f| %>
+      <%= label_tag :work_time, "指定勤務時間" %>
+      <%= time_field_tag :work_time, @user.work_time&.strftime("%H:%M"), class: "form-control no-picker" %>
+
+      <%= label_tag :basic_time, "基本勤務時間" %>
+      <%= time_field_tag :basic_time, @user.basic_time&.strftime("%H:%M"), class: "form-control no-picker" %>
+
+      <div class="center btn-basic-info-update">
+        <%= f.submit "編集", class: "btn btn-primary btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>

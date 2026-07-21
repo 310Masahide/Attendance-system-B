@@ -1,18 +1,22 @@
 <% provide(:title, 'All Users') %>
-<h1>ユーザー一覧</h1>
+<h1>ユーザー覧</h1>
 
 
 <div class="col-md-10 col-md-offset-1">
+  <div class="search-users-wrapper">
+    <div class="search-users-block">
+      <p class="search-users-label">ユーザー名検索</p>
+      <%= form_tag users_path, method: :get, class: "form-inline search-users-form" do %>
+        <%= text_field_tag :search, params[:search], placeholder: "キーワードを入力", class: "form-control", autocomplete: "off" %>
+        <%= submit_tag "検索", name: nil, class: "btn btn-search" %>
+      <% end %>
+    </div>
+  </div>
+
   <%= will_paginate %>
   <table class="table table-condensed table-hover" id="table-users">
     <thead>
       <tr>
-        <th><%= User.human_attribute_name :name %></th>
-        <th class="center"><%= User.human_attribute_name :department %></th>
-        <% if current_user.admin? %>
-          <th class="center"><%= User.human_attribute_name :basic_time %></th>
-          <th class="center"><%= User.human_attribute_name :work_time %></th>
-        <% end %>
         <th></th>
       </tr>
     </thead>

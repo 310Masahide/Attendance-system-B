@@ -12,6 +12,12 @@ module AttendancesHelper
 
   # 出勤時間と退勤時間を受け取り、在社時間を計算して返します。
   def working_times(start, finish)
-    format("%.2f", (((finish - start) / 60) / 60.0))
+    format_decimal_time(((finish - start) / 60) / 60.0)
+  end
+
+  # 時刻を15分単位に切り捨てて返します（例: 08:05 → 08:00, 18:43 → 18:30）。
+  def round_down_to_quarter_hour(time)
+    return nil if time.blank?
+    time.change(min: (time.min / 15) * 15)
   end
 end

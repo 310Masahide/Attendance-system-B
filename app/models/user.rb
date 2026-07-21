@@ -16,6 +16,9 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+  # 名前の部分一致（あいまい検索）でユーザーを絞り込みます。
+  scope :search_by_name, ->(name) { where("name LIKE ?", "%#{sanitize_sql_like(name)}%") if name.present? }
+
   # 渡された文字列のハッシュ値を返します。
   def User.digest(string)
     cost = 

@@ -1,18 +1,22 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :edit_basic_info, :update_basic_info]
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :edit_basic_info, :update_basic_info]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :edit_basic_info, :update_user_basic_info]
+  before_action :logged_in_user, only: [:index, :basic_info, :update_basic_info, :edit, :update, :destroy, :edit_basic_info, :update_user_basic_info]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_user, only: [:destroy, :edit_basic_info, :update_basic_info]
+  before_action :admin_user, only: [:index, :basic_info, :update_basic_info, :destroy, :edit_basic_info, :update_user_basic_info]
   before_action :set_one_month, only: :show
 
 
   def index
-    @users = User.paginate(page: params[:page])
-  
+    @users = User.search_by_name(params[:search]).paginate(page: params[:page])
+
     respond_to do |format|
       format.html
       format.json { render json: @users }
     end
+  end
+
+
+  def basic_info
   end
 
 
@@ -81,29 +85,35 @@ class UsersController < ApplicationController
   end
 
 
-  def edit_basic_info
-    @user = User.find(params[:id])
-  
-    respond_to do |format|
-      format.html { render partial: 'users/edit_basic_info', locals: { user: @user } } # 修正
-      format.turbo_stream
+  def update_basic_info
+    work_time = parse_time_param(params[:work_time])
+    basic_time = parse_time_param(params[:basic_time])
+
+    if work_time.nil? || basic_time.nil?
+      flash[:danger] = "指定勤務時間・基本勤務時間を正しい形式（例: 09:00）で入力してください。"
+    else
+      User.update_all(work_time: work_time, basic_time: basic_time)
+      flash[:success] = "全ユーザーの基本情報を更新しました。"
     end
+    redirect_to basic_info_users_path
   end
 
 
+  def edit_basic_info
+  end
 
 
-  def update_basic_info
-    if @user.update(basic_info_params)
-      flash[:success] = "#{@user.name}の基本情報を更新しました。"
+  def update_user_basic_info
+    work_time = parse_time_param(params[:work_time])
+    basic_time = parse_time_param(params[:basic_time])
+
+    if work_time.nil? || basic_time.nil?
+      flash[:danger] = "指定勤務時間・基本勤務時間を正しい形式（例: 09:00）で入力してください。"
     else
-      flash[:danger] = "#{@user.name}の更新は失敗しました。<br>" + @user.errors.full_messages.join("<br>")
+      @user.update(work_time: work_time, basic_time: basic_time)
+      flash[:success] = "#{@user.name}の基本情報を更新しました。"
     end
-  
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.turbo_stream
-    end
+    redirect_to edit_basic_info_user_path(@user)
   end
 
   private
@@ -112,7 +122,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :department, :password, :password_confirmation)
   end
 
-  def basic_info_params
-    params.require(:user).permit(:name, :email, :department)
+  def parse_time_param(value)
+    Time.zone.parse(value) if value.present?
+  rescue ArgumentError
+    nil
   end
 end

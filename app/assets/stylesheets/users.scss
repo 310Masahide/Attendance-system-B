@@ -9,7 +9,44 @@
 
 .btn-users-show {
   margin-top: -10px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  line-height: 0;
+}
+
+.btn-month-nav {
+  color: #000;
+  font-weight: bold;
+}
+
+/* 勤怠編集画面下部ボタン */
+
+.btn-edit-one-month {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.btn-gray-black {
+  background-color: #d3d3d3;
+  border-color: #bbb;
+  color: #000;
+
+  &:hover, &:focus, &:active {
+    background-color: #c0c0c0;
+    border-color: #aaa;
+    color: #000;
+  }
+}
+
+/* 曜日ごとのテキスト色 */
+
+.day-of-week-saturday {
+  color: #0000ff;
+}
+
+.day-of-week-sunday {
+  color: #ff0000;
 }
 
 /* ユーザー勤怠情報テーブル */
@@ -22,6 +59,12 @@
   td {
     vertical-align: middle;
     text-align: center;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #fff;
   }
 }
 
@@ -43,7 +86,56 @@
   margin-top: 10px;
 }
 
+.btn-basic-info-update {
+  margin-top: 15px;
+}
+
+.no-picker::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 /* ユーザー一覧ページ */
+
+.search-users-wrapper {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.search-users-block {
+  display: inline-block;
+  text-align: left;
+}
+
+.search-users-label {
+  margin-bottom: 5px;
+}
+
+.search-users-form {
+  display: flex;
+  margin-bottom: 0;
+
+  .form-control {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .btn {
+    margin-right: 10px;
+  }
+}
+
+.btn-search {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: #fff;
+
+  &:hover, &:focus, &:active {
+    background-color: #286090;
+    border-color: #204d74;
+    color: #fff;
+  }
+}
 
 #table-users {
   td {
