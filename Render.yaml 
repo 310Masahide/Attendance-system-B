@@ -1,0 +1,210 @@
+【進める前に必ず読んでください】
+
+今回登場するRenderに関してですが、
+
+原因の特定が難しいトラブルが発生することがあります。
+
+現段階で、必ず理解してからでないと先へ進めない項目ではないため予期せぬエラーが発生した場合は次のカリキュラムに進んでください。
+
+
+
+はじめに
+
+
+今回は表題の通りRenderを使ったデプロイについて学びます。
+
+
+
+Renderとは WEBアプリの公開を簡単にしてくれる、便利なサービスです。
+デプロイとは 曖昧な意味として使われがちですが、
+今回の場合「アプリケーションを使えるようにする」と捉えればOKです。
+
+
+すでにチュートリアルとして完成させたこのアプリケーションは、
+
+ソースコードのバージョン管理にGitを使っているため、比較的簡単にデプロイすることができます。
+
+
+
+それでは、始めましょう。
+
+Renderのセットアップ
+Gemの調整
+Renderでは、PostgreSQLデータベースを使います。
+
+（発音は"post-gres-cue-ell"で、「ポスグレ」と呼ばれます)
+
+
+
+そのためには本番（production）環境にpg gemをインストールして、
+
+RailsがPostgreSQLと通信できるようにします。
+
+
+
+【コード修正】Gemfile.lockの内容を全て消去してください
+
+上記の通りですが、ファイル内を全選択し内容を削除します。
+
+その後、保存してください。
+
+
+
+【コード修正】Gemfileの内容を書き換えてください
+
+全体をコピペで書き換えてOKです。
+
+
+
+ruby:Gemfile
+
+source "https://rubygems.org"
+
+
+ruby "3.0.6"
+
+
+# Core Rails
+gem "rails", "~> 7.1.0"
+gem "sprockets-rails"
+gem "puma", ">= 5.0"
+gem "importmap-rails"
+gem "stimulus-rails"
+gem "jbuilder"
+gem "bootsnap", require: false
+gem "bcrypt", "~> 3.1.7"
+gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
+
+
+group :production do
+  gem "pg", "~> 1.1"
+end
+
+
+group :development do
+  gem "web-console"
+  gem "listen", "~> 3.3"
+  gem "mysql2", "~> 0.5"
+end
+
+
+group :development, :test do
+  gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+end
+
+
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+end
+# Windows環境ではtzinfo-dataというgemを含める必要があります
+
+# Mac環境でもこのままでOKです
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+本番環境用のグループにpg gemを追加しましたが、
+
+この開発環境にはインストールしないようにbundle installを実行します。
+
+
+
+【コマンド実行】次のコマンドをターミナルで実行してください
+
+
+
+$ bundle install --without production
+
+
+上記のコマンドでは、
+
+特殊なフラグである--without productionを追加しています。
+
+
+
+このフラグを追加したコマンドを実行しても、
+
+開発環境には本番用のgemは反映されません。
+
+ではなぜ上記のコマンドを実行したかというと、
+
+pg gemを追加したことをGemfile.lockに反映させないと、
+
+本番環境へのデプロイで失敗してしまうためです。
+
+
+
+Render.yaml の作成
+Render.yaml は Render のインスタンスを作成する際の設計書にあたります。
+
+デプロイが簡単になるため事前に準備していきます。
+
+ルートディレクトリに Render.yaml のファイルを作成してください
+
+services:repo の部分はご自身の値に書き換えてください。
+
+#################################################################
+# Render Blueprint for Attendance Tutorial                     #
+# Rails 7.1.5.2 + Ruby 3.0.6 + PostgreSQL                   #
+#################################################################
+
+
+# Preview environments disabled for Hobby workspace
+# previews:
+#   generation: automatic
+
+
+services:
+  # Rails Web Application
+  - type: web
+    runtime: docker
+    name: attendance-tutorial
+    repo: https://github.com/310Masahide/Attendance-system-B.git
+    branch: main
+    dockerfilePath: ./Dockerfile
+    plan: free # Free tier
+    region: oregon # Default region
+    healthCheckPath: /
+
+
+    # Environment variables
+    envVars:
+      # Rails configuration
+      - key: RAILS_ENV
+        value: production
+
+
+      - key: RAILS_MASTER_KEY
+        generateValue: true
+
+
+      - key: SECRET_KEY_BASE
+        generateValue: true
+
+
+      # External Database connection (Neon Tech)
+      # Set manually in Render Dashboard
+      - key: DATABASE_URL
+        sync: false
+
+
+      # Additional Rails settings
+      - key: RAILS_MAX_THREADS
+        value: "5"
+
+
+      - key: PORT
+        value: "3000"
+
+
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+
+
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true"
+
+
+# External Database: Using Neon Tech PostgreSQL (free)
+# No managed database needed - using external Neon Tech service
