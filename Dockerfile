@@ -20,6 +20,9 @@ COPY . .
 
 RUN RAILS_ENV=production SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
 
+RUN chmod +x entrypoint.sh
+
 EXPOSE 3000
 
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["bash", "-lc", "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b 0.0.0.0"]
