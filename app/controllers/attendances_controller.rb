@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_user, only: [:edit_one_month, :update_one_month]
-  before_action :logged_in_user, only: [:update, :edit_one_month]
+  before_action :logged_in_user, only: [:update, :edit_one_month, :update_one_month]
   before_action :admin_or_correct_user, only: [:update, :edit_one_month, :update_one_month]
   before_action :set_one_month, only: :edit_one_month
 
@@ -8,7 +8,7 @@ class AttendancesController < ApplicationController
 
   def update
     @user = User.find(params[:user_id])
-    @attendance = Attendance.find(params[:id])
+    @attendance = @user.attendances.find(params[:id])
     # 出勤時間が未登録であることを判定します。
     if @attendance.started_at.nil?
       if @attendance.update(started_at: Time.current.change(sec: 0))
@@ -32,7 +32,7 @@ class AttendancesController < ApplicationController
   def update_one_month
     ActiveRecord::Base.transaction do # トランザクションを開始します。
       attendances_params.each do |id, item|
-        attendance = Attendance.find(id)
+        attendance = @user.attendances.find(id)
         attendance.update!(item)
       end
     end
