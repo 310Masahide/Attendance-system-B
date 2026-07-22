@@ -25,6 +25,11 @@ class ApplicationController < ActionController::Base
     redirect_to(root_url) unless current_user?(@user)
   end
 
+  # アクセスしたユーザーが本人、または管理権限所有者か確認します。
+  def correct_user_or_admin
+    redirect_to(root_url) unless current_user?(@user) || current_user.admin?
+  end
+
   # システム管理権限所有かどうか判定します。
   def admin_user
     redirect_to root_url unless current_user.admin?
